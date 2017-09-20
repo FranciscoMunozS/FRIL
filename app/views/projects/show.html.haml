@@ -1,0 +1,69 @@
+.container
+  .card
+    .card-header
+      %h4 Datos proyectos FRIL
+      %p.card-text
+    .card-body
+      .card-title
+        %h3= @project.project_name.capitalize
+      %hr/
+      .row
+        .col-md-4
+          %p.card-text
+            Comuna:
+            %br/
+            = @project.commune.capitalize
+        .col-md-4
+          %p.card-text
+            Codigo visita:
+            %br/
+            = @project.visit_id
+        .col-md-4
+          %p.card-text
+            Origen de visita:
+            %br/
+            = @project.origin_visit.capitalize
+      %hr/
+      .row
+        .col-md-4
+          %p.card-text
+            Fecha de visita:
+            %br/
+            = @project.date_visit.strftime('%d/%m/%Y')
+        .col-md-4
+          %p.card-text
+            Linea FRIL:
+            %br/
+            = @project.line
+        .col-md-4
+          %p.card-text
+            Codigo IDI:
+            %br/
+            = @project.idi
+      %hr/
+      .row
+        .col-md-12
+          %p.card-text
+            Seguimiento:
+            %br/
+            = @project.tracing? ? 'Si' : 'No'
+      %hr/
+      .row
+        .col-md-6
+          %p.card-text
+            Cartilla visita:
+            %br/
+            = @project.visit_booklet.capitalize
+          %p.card-text
+            = link_to "Descargar Cartilla de visita", @project.file_url if @project.file?
+        .col-md-6
+          %p.card-text
+            Informe cometido:
+            %br/
+            = @project.report_made.capitalize
+          %p.card-text
+            = link_to "Descargar Informe de cometido", @project.attachment_url if @project.attachment?
+
+    .card-footer
+      =link_to 'Editar proyecto', edit_project_path, class: 'btn btn-outline-info'
+      =link_to 'Cancelar', root_path, class: 'btn btn-outline-danger'
