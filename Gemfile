@@ -11,7 +11,7 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks', '~> 5'
+gem 'turbolinks'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'simple_form', '~> 3.5'
@@ -21,7 +21,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'bootstrap-datepicker-rails'
 gem 'auto_increment'
 gem 'carrierwave', '~> 1.1'
-gem 'dropzonejs-rails'
+gem "cocoon"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

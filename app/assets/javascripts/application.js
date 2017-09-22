@@ -14,8 +14,8 @@
 //= require popper
 //= require bootstrap
 //= require bootstrap-datepicker
+//= require cocoon
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
 
 
@@ -26,4 +26,16 @@ $(document).ready(function(){
     language: "es",
     orientation: "bottom left"
   });
+});
+
+$(document).ready(function(){
+    $('.datepicker').datepicker();
+    $('#observations').on('cocoon:after-insert', function(e, insertedItem) {
+       $('.datepicker').datepicker({
+         format: "dd/mm/yyyy",
+         clearBtn: true,
+         language: "es",
+         orientation: "bottom left"
+       });
+    });
 });

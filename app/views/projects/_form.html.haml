@@ -37,5 +37,15 @@
         .form-group.col-md-6
           = f.input :report_made, input_html: { class: 'form-control' }
           = f.input :attachment, label: 'Subir reporte de cometido', input_html: { class: 'form-control-file' }
+
+      %h3 Observaciones
+      %hr
+      #observations
+        = f.simple_fields_for :observations do |observation|
+          = render 'observation_fields', f: observation
+        .links
+          %p
+            = link_to_add_association 'Agregar observación', f, :observations, class: 'btn btn-outline-success'
+
     .card-footer
       = f.button 'submit', class: 'btn btn-outline-primary'

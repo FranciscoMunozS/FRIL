@@ -24,6 +24,18 @@ en:
         visit_id: "Codigo visita"
         visit_booklet: "Cartilla de visita"
         report_made: "Informe de cometido"
+      observation:
+        action_plan: "Plan de acción GORE"
+        office_observation: "Oficio observaciones"
+        office_date: "Fecha oficio"
+        due_date: "Fecha vencimiento plazo"
+        responsible: "Responsable"
+        meet: "¿Cumple?"
+        office_breach: "Oficio informa incumplimiento"
+        breach_date: "Fecha oficio incumplimiento"
+        term_second: "Plazo n° 2"
+        responsible_second: "Responsable"
+        meet_second: "¿Cumple?"
       user:
         email: "Correo electronico"
         password: "Contraseña"
