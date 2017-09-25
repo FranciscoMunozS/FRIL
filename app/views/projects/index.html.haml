@@ -1,5 +1,4 @@
 %br
-%br
 %table.table.table-hover
   %thead
     %tr
@@ -24,7 +23,7 @@
   %tbody
     - @projects.each do |project|
       %tr
-      - if project.tracing == true
+      - if project.tracing == false
         %td= project.project_name.capitalize
         %td= project.commune.capitalize
         %td= project.origin_visit.capitalize

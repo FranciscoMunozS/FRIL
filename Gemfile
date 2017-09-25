@@ -21,7 +21,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'bootstrap-datepicker-rails'
 gem 'auto_increment'
 gem 'carrierwave', '~> 1.1'
-gem "cocoon"
+gem 'cocoon'
+gem 'rails-bootstrap-tabs'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

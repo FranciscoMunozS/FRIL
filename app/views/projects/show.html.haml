@@ -1,5 +1,4 @@
 %br
-%br
 .container
   .card
     .card-header
@@ -65,6 +64,10 @@
             = @project.report_made.capitalize
           %p.card-text
             = link_to "Descargar Informe de cometido", @project.attachment_url if @project.attachment?
+      %hr/
+      %h3 Observaciones
+      %hr/
+      = render 'assets/observations'
 
     .card-footer
       =link_to 'Editar proyecto', edit_project_path, class: 'btn btn-outline-info'

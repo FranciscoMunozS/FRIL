@@ -1,0 +1,16 @@
+=tabs do |c|
+  - @project.observations.each do |observation|
+    - c.tab 'Observación' do
+      .card-body
+        %h4 Seguimiento proyecto
+        %hr
+        .row
+          .col-md-4
+            %p Detalle de observación:
+            %p= observation.observation_detail
+          .col-md-4
+            %p Plan de acción:
+            %p= observation.action_plan
+          .col-md-4
+            %p Responsable:
+            %p= observation.responsible

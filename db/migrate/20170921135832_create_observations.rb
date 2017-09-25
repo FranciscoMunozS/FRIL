@@ -3,7 +3,7 @@ class CreateObservations < ActiveRecord::Migration[5.1]
     create_table :observations do |t|
 
       t.string  :action_plan
-      t.text  :office_observation
+      t.text    :office_observation
       t.date    :office_date
       t.date    :due_date
       t.string  :responsible

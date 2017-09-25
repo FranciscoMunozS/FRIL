@@ -37,8 +37,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:project_name, :commune, :origin_visit, :date_visit, :line, :idi, :tracing, :visit_id, :visit_booklet, :report_made, :file, :attachment,
-    observations_attributes: [:action_plan, :office_observation, :office_date, :due_date, :responsible, :meet, :office_breach, :breach_date, :term_second, :responsible_second, :meet_second, :done, :_destroy ])
+    params.require(:project).permit!
   end
 
   def find_project

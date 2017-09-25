@@ -25,6 +25,7 @@ en:
         visit_booklet: "Cartilla de visita"
         report_made: "Informe de cometido"
       observation:
+        observation_detail: "Detalle de observaciones"
         action_plan: "Plan de acción GORE"
         office_observation: "Oficio observaciones"
         office_date: "Fecha oficio"
