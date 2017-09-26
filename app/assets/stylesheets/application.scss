@@ -20,6 +20,7 @@
   body {
     font-family: 'Open Sans', sans-serif;
     padding-top: 3.5rem;
+    font-size: 14px;
   }
 
   @media (min-width: 1920px) {
@@ -34,6 +35,21 @@
 
   .table-hover{
     font-size: 14px;
+  }
+
+  .centered {
+   margin:auto;
+   max-width: 25rem;
+  }
+
+  .center {
+    margin: auto;
+    max-width: 40rem;
+  }
+
+  .footer {
+    bottom: 0;
+    width: 100%;
   }
 
   nav {

@@ -14,3 +14,35 @@
           .col-md-4
             %p Responsable:
             %p= observation.responsible
+        %hr
+        .row
+          .col-md-4
+            %p Oficio informa observaciones GORE:
+            %p= observation.office_observation
+          .col-md-4
+            %p Fecha oficio:
+            %p= observation.office_date.try(:strftime, '%d/%m/%Y')
+          .col-md-4
+            %p ¿Cumple?
+            %p= observation.meet? ? 'Si' : 'No'
+        %hr
+        %h4 Incumplimiento
+        %hr
+        .row
+          .col-md-4
+            %p Oficio informa incumplimiento:
+            %p= observation.office_breach
+          .col-md-4
+            %p Fecha oficio incumplimiento:
+            %p= observation.breach_date.try(:strftime, '%d/%m/%Y')
+          .col-md-4
+            %p Plazo N°2:
+            %p= observation.term_second
+        %hr
+        .row
+          .col-md-4
+            %p Responsable:
+            %p= observation.responsible_second
+          .col-md-4
+            %p ¿Cumple?
+            %p= observation.meet_second? ? 'Si' : 'No'

@@ -2,11 +2,16 @@
 .container
   .card
     .card-header
-      %h4 Datos proyectos FRIL
-      %p.card-text
+      %ul.list-inline
+        %li.list-inline-item
+          %h4 Datos pryecto FRIL -
+        %li.list-inline-item
+          %h4 Codigo:
+        %li.list-inline-item
+          %h4= @project.visit_id
     .card-body
       .card-title
-        %h3= @project.project_name.capitalize
+        %h4= @project.project_name.capitalize
       %hr/
       .row
         .col-md-4
@@ -64,9 +69,11 @@
             = @project.report_made.capitalize
           %p.card-text
             = link_to "Descargar Informe de cometido", @project.attachment_url if @project.attachment?
-      %hr/
-      %h3 Observaciones
-      %hr/
+  %br
+  .card
+    .card-header
+      %h4 Observaciones
+    .card-body
       = render 'assets/observations'
 
     .card-footer

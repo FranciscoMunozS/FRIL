@@ -8,4 +8,9 @@
 		= javascript_include_tag 'application'
 	%body
 		= render 'assets/nav'
+		%br
+		.container
+			- flash.each do |name, msg|
+				= content_tag :div, msg, class: "alert alert-info"
 		= yield
+		= render 'assets/footer'

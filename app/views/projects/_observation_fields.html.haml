@@ -8,7 +8,7 @@
     .col-md-6
       = f.input :action_plan, input_html: { class: 'form-control' }
     .col-md-6
-      = f.input :office_date, as: :string, input_html: { class: "datepicker" }
+      = f.input :office_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }
   .row
     .col-md-12
       = f.input :office_observation, input_html: { class: 'form-control' }
