@@ -10,14 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery3
+//= require jquery
 //= require popper
 //= require bootstrap
 //= require bootstrap-datepicker
 //= require cocoon
 //= require rails-ujs
 //= require_tree .
-
 
 $(document).ready(function(){
   $('.datepicker').datepicker({
@@ -29,21 +28,21 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $('.datepicker').datepicker();
-    $('#observations').on('cocoon:after-insert', function(e, insertedItem) {
-       $('.datepicker').datepicker({
-         format: "dd/mm/yyyy",
-         clearBtn: true,
-         language: "es",
-         orientation: "bottom left"
-       });
-    });
-});
-
-$(document).ready(function(){
   setTimeout(function(){
     $('.alert').fadeOut("slow", function(){
       $(this).remove();
     })
   }, 2500);
+});
+
+$(document).ready(function(){
+  $('.datepicker').datepicker();
+  $('#observations').on('cocoon:after-insert', function(e, insertedItem) {
+     $('.datepicker').datepicker({
+       format: "dd/mm/yyyy",
+       clearBtn: true,
+       language: "es",
+       orientation: "bottom left"
+     });
+  });
 });

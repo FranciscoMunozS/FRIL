@@ -5,47 +5,54 @@
         - @project.errors.full_messages.each do |msg|
           %br/
           %li.text-danger= msg
-
   .card
     .card-body
-      %h3 Datos del proyecto
-      %hr/
-      .form-row
-        .form-group.col-md-6
-          = f.input :project_name, input_html: { class: 'form-control' }
-        .form-group.col-md-6
-          = f.input :commune, input_html: { class: 'form-control' }
-      .form-row
-        .form-group.col-md-4
-          = f.input :visit_id, disabled: true, input_html: { class: 'form-control' }
-        .form-group.col-md-4
-          = f.input :origin_visit, input_html: { class: 'form-control' }
-        .form-group.col-md-4
-          = f.input :date_visit, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }
-      .form-row
-        .form-group.col-md-6
-          = f.input :line, input_html: { class: 'form-control' }
-        .form-group.col-md-6
-          = f.input :idi, input_html: { class: 'form-control' }
-      .form-check
-        %label.form-check-label
-          = f.input :tracing, as: :boolean, input_html: { class: 'form-check-input' }
-      .form-row
-        .form-group.col-md-6
-          = f.input :visit_booklet, input_html: { class: 'form-control' }
-          = f.input :file, label: 'Subir cartilla de visita', input_html: { class: 'form-control-file' }
-        .form-group.col-md-6
-          = f.input :report_made, input_html: { class: 'form-control' }
-          = f.input :attachment, label: 'Subir reporte de cometido', input_html: { class: 'form-control-file' }
+      =tabs do |c|
+        - c.tab 'Proyecto' do
+          %br
+          %h3 Datos del proyecto
+          %hr/
+          .form-row
+            .form-group.col-md-6
+              = f.input :project_name, input_html: { class: 'form-control' }
+            .form-group.col-md-6
+              = f.input :commune, input_html: { class: 'form-control' }
+          .form-row
+            .form-group.col-md-4
+              = f.input :visit_id, disabled: true, input_html: { class: 'form-control' }
+            .form-group.col-md-4
+              = f.input :origin_visit, input_html: { class: 'form-control' }
+            .form-group.col-md-4
+              = f.input :date_visit, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }
+          .form-row
+            .form-group.col-md-6
+              = f.input :line, input_html: { class: 'form-control' }
+            .form-group.col-md-6
+              = f.input :idi, input_html: { class: 'form-control' }
+          .form-check
+            %label.form-check-label
+              = f.input :tracing, as: :boolean, input_html: { class: 'form-check-input' }
+          .form-row
+            .form-group.col-md-6
+              = f.input :visit_booklet, input_html: { class: 'form-control' }
+            .form-group.col-md-6
+              = f.input :file, label: 'Cargar cartilla de visita', input_html: { class: 'form-control-file' }
+          .form-row
+            .form-group.col-md-6
+              = f.input :report_made, input_html: { class: 'form-control' }
+            .form-group.col-md-6
+              = f.input :attachment, label: 'Cargar informe de cometido', input_html: { class: 'form-control-file' }
 
-      %h3 Detalles del proyecto
-      %hr
-      #observations
-        = f.simple_fields_for :observations do |observation|
-          = render 'observation_fields', f: observation
-        .links
-          %p
-            = link_to_add_association 'Agregar observación', f, :observations, class: 'btn btn-outline-success'
+        - c.tab 'Detalles' do
+          %br
+          %h3 Detalles del proyecto
+          %hr
+          #observations
+            = f.simple_fields_for :observations do |observation|
+              = render 'observation_fields', f: observation
+            .links
+              %p
+                = link_to_add_association 'Agregar observación', f, :observations, class: 'btn btn-outline-success'
 
     .card-footer
       = f.button 'submit', class: 'btn btn-outline-primary'

@@ -23,6 +23,7 @@ gem 'auto_increment', '~> 1.4', '>= 1.4.1'
 gem 'carrierwave', '~> 1.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.10'
 gem 'rails-bootstrap-tabs', '~> 0.2.0'
+gem 'rails_admin', '~> 1.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

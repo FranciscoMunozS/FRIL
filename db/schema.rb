@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170922114744) do
 
   create_table "observations", force: :cascade do |t|
     t.string "action_plan"
-    t.text "office_observation"
+    t.string "office_observation"
     t.date "office_date"
     t.date "due_date"
     t.string "responsible"

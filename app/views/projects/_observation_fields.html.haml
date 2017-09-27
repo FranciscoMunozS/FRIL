@@ -1,23 +1,18 @@
 .nested-fields
   %h3 Observación
-  %hr
   .row
     .col-md-12
       = f.input :observation_detail, input_html: { class: 'form-control' }
-  .row
-    .col-md-6
+    .col-md-4
       = f.input :action_plan, input_html: { class: 'form-control' }
-    .col-md-6
-      = f.input :office_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }
-  .row
-    .col-md-12
+    .col-md-4
+      = f.input :office_date, as: :string, input_html: { class: "datepicker" }
+    .col-md-4
       = f.input :office_observation, input_html: { class: 'form-control' }
-  .row
     .col-md-6
       = f.input :due_date, as: :string, input_html: { class: "datepicker" }
     .col-md-6
       = f.input :responsible, input_html: { class: 'form-control' }
-  .row
     .col-md-12
       .form-check
         %label.form-check-label
@@ -27,16 +22,13 @@
       = f.input :office_breach, input_html: { class: 'form-control' }
     .col-md-6
       = f.input :breach_date, as: :string, input_html: { class: "datepicker" }
-  .row
     .col-md-6
       = f.input :term_second, input_html: { class: 'form-control' }
     .col-md-6
       = f.input :responsible_second, input_html: { class: 'form-control' }
-  .row
     .col-md-12
       .form-check
         %label.form-check-label
           = f.input :meet_second, input_html: { class: 'form-check-input' }
   %p
-    = link_to_remove_association "Quitar observación", f, class: 'btn btn-outline-info'
-  %hr
+    = link_to_remove_association "Quitar observación", f, data: {:confirm => 'Eliminar observación?'}, class: 'btn btn-outline-info'
