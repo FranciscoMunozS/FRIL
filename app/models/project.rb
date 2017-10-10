@@ -5,7 +5,7 @@ class Project < ApplicationRecord
   mount_uploader :file, FileUploader
   mount_uploader :attachment, AttachmentUploader
 
-  validates :project_name, presence: true
+  validates :name, presence: true
 
   auto_increment :visit_id
 

@@ -24,7 +24,7 @@
     - @projects.each do |project|
       %tr
       - if project.tracing == false
-        %td= project.project_name.capitalize
+        %td= project.name.capitalize
         %td= project.commune.capitalize
         %td= project.origin_visit.capitalize
         %td= project.date_visit.try(:strftime, "%d/%m/%y")

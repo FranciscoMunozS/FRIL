@@ -11,7 +11,7 @@
           %h4= @project.visit_id
     .card-body
       .card-title
-        %h4= @project.project_name.capitalize
+        %h4= @project.name.capitalize
       %hr/
       .row
         .col-md-4
@@ -77,5 +77,5 @@
       = render 'assets/observations'
 
     .card-footer
-      =link_to 'Editar proyecto', edit_project_path, class: 'btn btn-outline-info'
+      =link_to 'Editar proyecto',rails_admin.edit_path(model_name: 'project', id: @project.id), class: 'btn btn-outline-info'
       =link_to 'Cancelar', root_path, class: 'btn btn-outline-danger'

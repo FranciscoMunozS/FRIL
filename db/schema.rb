@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170922114744) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "project_name"
+    t.string "name"
     t.string "commune"
     t.string "origin_visit"
     t.date "date_visit"
